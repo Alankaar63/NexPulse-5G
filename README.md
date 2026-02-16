@@ -1,4 +1,4 @@
-# Network Failure Project
+# NexPulse-5G (Network Failure Prediction Software)
 
 This folder contains the complete network failure prediction system that was upgraded from a hackathon model to a deployable platform.
 
