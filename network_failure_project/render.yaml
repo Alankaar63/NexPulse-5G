@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: network-failure-predictor
+    env: python
+    plan: starter
+    region: ohio
+    rootDir: .
+    buildCommand: pip install -r network_failure_service/requirements.txt
+    startCommand: uvicorn network_failure_service.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: TICKETING_PROVIDER
+        value: none
+      - key: PYTHON_VERSION
+        value: 3.11.10

@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NexusPulse | Network Failure Prediction</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/app/styles.css" />
+</head>
+<body>
+  <div class="noise"></div>
+  <header class="topbar glass">
+    <a href="#hero" class="brand">NEXUSPULSE</a>
+    <nav>
+      <a href="#problem">System</a>
+      <a href="#intelligence">Intelligence</a>
+      <a href="#predictor">Auto Predictor</a>
+      <a href="#lan-health">LAN Health</a>
+    </nav>
+  </header>
+
+  <main id="smooth-root">
+    <section id="hero" class="hero section">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="hero-inner">
+        <p class="eyebrow reveal">AI-DRIVEN NETWORK OPERATIONS</p>
+        <h1 class="reveal">Predict failure before users feel it.</h1>
+        <p class="lede reveal">Real-time telemetry, geo-aware diagnostics, and maintenance recommendations for field teams.</p>
+        <div class="hero-actions reveal">
+          <a class="btn primary" href="#predictor">Start Auto Scan</a>
+          <button class="btn ghost" id="runDiagnosticsHero">Run Diagnostics Only</button>
+        </div>
+        <div class="metrics reveal">
+          <article><h3 id="metricLatency">--</h3><p>Latency (ms)</p></article>
+          <article><h3 id="metricJitter">--</h3><p>Jitter (ms)</p></article>
+          <article><h3 id="metricLoss">--</h3><p>Packet Loss (%)</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="problem" class="section split">
+      <div class="pane reveal">
+        <h2>From blind outages to predictive response.</h2>
+        <p>Traditional monitoring reacts after service degradation. NexusPulse uses signal and transport proxies to estimate radio health, score failure probability, and trigger maintenance workflows early.</p>
+      </div>
+      <div class="pane glass reveal">
+        <ul class="feature-list">
+          <li><span>Automatic telemetry capture</span><small>No manual input from end user</small></li>
+          <li><span>Failure probability scoring</span><small>Model-based inference from your trained artifacts</small></li>
+          <li><span>Maintenance recommendation</span><small>Actionable urgency tiers for network teams</small></li>
+          <li><span>Ticket automation ready</span><small>Auto-raise maintenance ticket when risk is high</small></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="intelligence" class="section timeline">
+      <h2 class="reveal">How the intelligence layer works</h2>
+      <div class="steps">
+        <article class="reveal"><span>01</span><h3>Collect</h3><p>Automatically capture GPS, downlink, RTT, jitter, and packet-loss.</p></article>
+        <article class="reveal"><span>02</span><h3>Infer</h3><p>Generate failure probability and maintenance recommendation from your model.</p></article>
+        <article class="reveal"><span>03</span><h3>Respond</h3><p>Trigger ticket workflow and keep feedback for retraining.</p></article>
+      </div>
+    </section>
+
+    <section id="predictor" class="section">
+      <div class="predictor-wrap glass reveal">
+        <div class="predictor-head">
+          <h2>Autonomous Prediction Studio</h2>
+          <p>One click. The platform collects telemetry and predicts automatically.</p>
+        </div>
+
+        <div class="actions">
+          <button class="btn primary" id="autoScanBtn">Start Auto Scan & Predict</button>
+          <button class="btn ghost" id="runDiagnosticsBtn">Run Diagnostics Only</button>
+        </div>
+
+        <div class="telemetry-grid">
+          <article class="telemetry-item"><h4>Device ID</h4><p id="tDeviceId">--</p></article>
+          <article class="telemetry-item"><h4>Network Type</h4><p id="tNetworkType">--</p></article>
+          <article class="telemetry-item"><h4>Effective Type</h4><p id="tEffectiveType">--</p></article>
+          <article class="telemetry-item"><h4>Latitude</h4><p id="tLatitude">--</p></article>
+          <article class="telemetry-item"><h4>Longitude</h4><p id="tLongitude">--</p></article>
+          <article class="telemetry-item"><h4>Downlink Mbps</h4><p id="tDownlink">--</p></article>
+          <article class="telemetry-item"><h4>RTT ms</h4><p id="tRtt">--</p></article>
+          <article class="telemetry-item"><h4>Latency ms</h4><p id="tLatency">--</p></article>
+          <article class="telemetry-item"><h4>Jitter ms</h4><p id="tJitter">--</p></article>
+          <article class="telemetry-item"><h4>Packet Loss %</h4><p id="tPacketLoss">--</p></article>
+          <article class="telemetry-item"><h4>Download Test Mbps</h4><p id="tDownload">--</p></article>
+        </div>
+
+        <p id="status" class="status"></p>
+        <pre id="result" class="result">Awaiting auto-scan...</pre>
+      </div>
+    </section>
+
+    <section id="lan-health" class="section">
+      <div class="predictor-wrap glass reveal">
+        <div class="predictor-head">
+          <h2>Check Your Current LAN's Health</h2>
+          <p>Scan your current subnet, estimate risk, and trigger alerts when congestion and failure risk are both high.</p>
+        </div>
+
+        <div class="lan-controls">
+          <label>Subnet (optional, auto if empty)
+            <input id="lanSubnet" placeholder="10.24.84.0/24" />
+          </label>
+          <label>Device Alert Threshold
+            <input id="lanThreshold" type="number" value="45" min="1" />
+          </label>
+          <button class="btn primary" id="lanHealthBtn">Check LAN Health</button>
+        </div>
+
+        <div class="telemetry-grid">
+          <article class="telemetry-item"><h4>Subnet</h4><p id="lanSubnetOut">--</p></article>
+          <article class="telemetry-item"><h4>Active Devices</h4><p id="lanDeviceCount">--</p></article>
+          <article class="telemetry-item"><h4>Scan Method</h4><p id="lanScanMethod">--</p></article>
+          <article class="telemetry-item"><h4>Failure Probability</h4><p id="lanFailureProb">--</p></article>
+          <article class="telemetry-item"><h4>Maintenance</h4><p id="lanMaintenance">--</p></article>
+          <article class="telemetry-item"><h4>Ticket Status</h4><p id="lanTicket">--</p></article>
+          <article class="telemetry-item"><h4>Congestion+Risk Alert</h4><p id="lanAlert">--</p></article>
+        </div>
+
+        <p id="lanStatus" class="status"></p>
+        <pre id="lanResult" class="result">LAN scan not run yet.</pre>
+      </div>
+    </section>
+  </main>
+
+  <script src="/app/script.js"></script>
+</body>
+</html>

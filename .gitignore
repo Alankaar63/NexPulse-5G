@@ -1,0 +1,14 @@
+# Track only the dedicated network failure project folder.
+*
+!.gitignore
+!network_failure_project/
+!network_failure_project/**
+
+# Runtime/local artifacts
+network_failure_project/.nfp-venv/
+network_failure_project/network_failure_service/.env
+network_failure_project/network_failure_service/network_failure.db
+network_failure_project/network_failure_service/artifacts/
+network_failure_project/network_failure_service/__pycache__/
+network_failure_project/network_failure_service/scripts/__pycache__/
+network_failure_project/network_failure_service/*.pyc
