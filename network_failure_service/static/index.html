@@ -32,6 +32,7 @@
         <div class="hero-actions reveal">
           <a class="btn primary" href="#predictor">Start Auto Scan</a>
           <button class="btn ghost" id="runDiagnosticsHero">Run Diagnostics Only</button>
+          <a class="btn apk" href="https://raw.githubusercontent.com/Alankaar63/NexPulse-5G/main/network_failure_service/android_studio_app/releases/nexuspulse-debug.apk">Download Android APK</a>
         </div>
         <div class="metrics reveal">
           <article><h3 id="metricLatency">--</h3><p>Latency (ms)</p></article>
@@ -62,6 +63,28 @@
         <article class="reveal"><span>01</span><h3>Collect</h3><p>Automatically capture GPS, downlink, RTT, jitter, and packet-loss.</p></article>
         <article class="reveal"><span>02</span><h3>Infer</h3><p>Generate failure probability and maintenance recommendation from your model.</p></article>
         <article class="reveal"><span>03</span><h3>Respond</h3><p>Trigger ticket workflow and keep feedback for retraining.</p></article>
+      </div>
+    </section>
+
+    <section id="mobile-app" class="section split">
+      <div class="pane glass reveal">
+        <p class="eyebrow">ANDROID CLIENT</p>
+        <h2>Run the same system on a phone.</h2>
+        <p>
+          The Android app collects real device-side telemetry like Wi-Fi RSSI, latency, jitter, packet loss,
+          local IP, and optional GPS, then sends it to the same backend for prediction.
+        </p>
+        <div class="actions compact-actions">
+          <a class="btn primary" href="https://raw.githubusercontent.com/Alankaar63/NexPulse-5G/main/network_failure_service/android_studio_app/releases/nexuspulse-debug.apk">Download APK</a>
+          <a class="btn ghost" href="https://github.com/Alankaar63/NexPulse-5G/tree/main/network_failure_service/android_studio_app">Open Android Source</a>
+        </div>
+      </div>
+      <div class="pane reveal">
+        <ul class="feature-list">
+          <li><span>Real Wi-Fi metrics</span><small>RSSI, downlink hint, ping-based latency, jitter, and packet loss</small></li>
+          <li><span>Same backend</span><small>Uses `/predict` and `/lan-health` from the deployed service</small></li>
+          <li><span>Deployment-ready</span><small>Switch base URL from local host to your Render domain after deploy</small></li>
+        </ul>
       </div>
     </section>
 

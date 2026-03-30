@@ -58,3 +58,7 @@ docker compose -f docker-compose.network-failure.yml up --build
 ## Notes
 - Browser clients cannot access all low-level Wi-Fi metrics.
 - `POST /lan-health` requires host tools (`nmap`, `ping`) installed.
+
+## Android Studio App (Kotlin)
+- Project path: `/Users/vivektripathi/Desktop/machineLearning/network_failure_service/android_studio_app`
+- Guide: `/Users/vivektripathi/Desktop/machineLearning/network_failure_service/android_studio_app/README.md`

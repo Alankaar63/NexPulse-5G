@@ -180,6 +180,12 @@ h1 {
   border-color: var(--line);
 }
 
+.btn.apk {
+  background: linear-gradient(90deg, #9ef01a, #6fe7dd);
+  color: #05131a;
+  box-shadow: 0 0 28px #9ef01a33;
+}
+
 .metrics {
   margin-top: 28px;
   display: grid;
@@ -283,6 +289,10 @@ h1 {
 }
 
 .predictor-head p { color: var(--muted); }
+
+.compact-actions {
+  margin-top: 18px;
+}
 
 .telemetry-grid {
   margin-top: 18px;
